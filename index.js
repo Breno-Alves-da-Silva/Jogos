@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
 
-const dadosCliente = require('./data/Jogos.json')
+const dadosJogos= require('./data/Jogos.json')
 
 
 const server = express()
@@ -19,61 +19,59 @@ server.get('/', (req, res) => {
 })
 
 //CREATE
-server.post('/medicamento', (req, res) => {
-    const novoMedicamento = req.body
+server.post('/jogos', (req, res) => {
+    const novoJogos = req.body
 
-    if (!novoMedicamento.nome || !novoMedicamento.fabricante || !novoMedicamento.preco || !novoMedicamento.quantidade) {
+    if (!novoJogos.nome || !novoJogos.dataLançamento || !novoJogos.Descricao || !novoJogos.imagem) {
         return res.status(400).json({ mensagem: "Dados não preenchidos ou incompletos, tente novamente" })
     } else {
-        dadosMedicamento.Medicamento.push(novoMedicamento)
-        salvarDadosMedicamento(dadosMedicamento)
+        dadosJogos.Jogos.push(novoJogos)
+        salvarDadosJogos(dadosJogos)
 
-        return res.status(201).json({ mensagem: "Medicamento cadastrado com sucesso" })
+        return res.status(201).json({ mensagem: "Jogos cadastrado com sucesso" })
     }
 })
 
 //READ
-server.get('/Medicamento', (req, res) => {
-    return res.json(dadosMedicamento.Medicamento)
+server.get('/jogos', (req, res) => {
+    return res.json(dadosJogos.Jogos)
 })
 
 //UPDATE
-server.put('/medicamento/:id', (req, res) => {
-    const medicamentoId = parseInt(req.params.id)
-    const atualizarMedicamento = req.body
+server.put('/jogos/:id', (req, res) => {
+    const jogosId = parseInt(req.params.id)
+    const atualizarJogos = req.body
 
-    const indiceMedicamento = dadosMedicamento.Medicamento.findIndex(u => u.id === medicamentoId)
+    const indiceJogos = dadosJogos.Jogos.findIndex(u => u.id === jogosId)
 
-    if (indiceMedicamento === -1) {
-        return res.status(404).json({ mensagem: "Medicamento não encontrado" })
+    if (indiceJogos === -1) {
+        return res.status(404).json({ mensagem: "Jogo não encontrado" })
     } else {
-        dadosMedicamento.Medicamento[indiceMedicamento].nome = atualizarMedicamento.nome || dadosMedicamento.Medicamento[indiceMedicamento].nome
+        dadosJogos.Jogos[indiceJogos].nome = atualizarJogos.nome || dadosJogos.Jogos[indiceJogos].nome
 
-        dadosMedicamento.Medicamento[indiceMedicamento].fabricante = atualizarMedicamento.fabricante || dadosMedicamento.Medicamento[indiceMedicamento].fabricante
+        dadosJogos.Jogos[indiceJogos].Descricao = atualizarJogos.Descricao || dadosJogos.Jogos[indiceJogos].Descricao
 
-        dadosMedicamento.Medicamento[indiceMedicamento].endereco = atualizarMedicamento.endereco || dadosMedicamento.Medicamento[indiceMedicamento].endereco
+        dadosJogos.Jogos[indiceJogos].dataLançamento = atualizarJogos.dataLançamento || dadosJogos.Jogos[indiceJogos].dataLançamento
 
-        dadosMedicamento.Medicamento[indiceMedicamento].email = atualizarMedicamento.email || dadosMedicamento.Medicamento[indiceMedicamento].email
+        dadosJogos.Jogos[indiceJogos].imagem = atualizarJogos.imagem || dadosJogos.Jogos[indiceJogos].imagem
 
-        dadosMedicamento.Medicamento[indiceMedicamento].telefone = atualizarMedicamento.telefone || dadosMedicamento.Medicamento[indiceMedicamento].telefone
-
-        salvarDadosMedicamento(dadosMedicamento)
+        salvarDadosJogos(dadosJogos)
 
         return res.status(201).json({ mensagem: "Dados completos, atualização feita com sucesso!" })
     }
 })
 
 //DELETE
-server.delete('/medicamento/:id', (req, res) => {
+server.delete('/jogos/:id', (req, res) => {
     const id = parseInt(req.params.id)
 
-    dadosMedicamento.Medicamento = dadosMedicamento.Medicamento.filter(u => u.id !== id)
+    dadosJogos.Jogos = dadosJogos.Jogos.filter(u => u.id !== id)
 
-    salvarDadosMedicamento(dadosMedicamento)
-    return res.status(200).json({ mensagem: "Medicamento excluido com sucesso" })
+    salvarDadosJogos(dadosJogos)
+    return res.status(200).json({ mensagem: "Jogo excluido com sucesso" })
 })
 
 // FUNÇÃO SALVAR DADOS 
-function salvarDadosMedicamento() {
-    fs.writeFileSync(__dirname + "/data/Medicamento.json", JSON.stringify(dadosMedicamento, null, 2));
+function salvarDadosJogos() {
+    fs.writeFileSync(__dirname + "/data/Jogos.json", JSON.stringify(dadosJogos, null, 2));
 }
