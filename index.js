@@ -22,7 +22,7 @@ server.get('/', (req, res) => {
 server.post('/jogos', (req, res) => {
     const novoJogos = req.body
 
-    if (!novoJogos.nome || !novoJogos.dataLançamento || !novoJogos.Descricao || !novoJogos.imagem) {
+    if (!novoJogos.nome || !novoJogos.dataLancamento || !novoJogos.descricao || !novoJogos.imagem) {
         return res.status(400).json({ mensagem: "Dados não preenchidos ou incompletos, tente novamente" })
     } else {
         dadosJogos.Jogos.push(novoJogos)

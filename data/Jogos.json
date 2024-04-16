@@ -1,0 +1,18 @@
+{
+  "Jogos": [
+    {
+      "id": 1,
+      "nome": "God of War Ragnarock",
+      "descricao": "God of War Ragnarök é um jogo eletrônico de ação-aventura desenvolvido pela Santa Monica Studio e publicado pela Sony Interactive Entertainment. Foi lançado em 9 de novembro de 2022 para PlayStation 4 e PlayStation 5. É o nono título da série God of War, o nono em ordem cronológica, e a sequência de God of War (2018). Vagamente baseado na mitologia nórdica, o jogo se passa na antiga Escandinávia e apresenta os protagonistas Kratos e seu filho Atreus. Servindo como o final da era nórdica da série, o jogo dá início ao Ragnarök, uma série de eventos que trazem o fim dos tempos e retrata a morte de alguns dos deuses nórdicos, que foi predito no jogo anterior após Kratos ter matado o deus Æsir Baldur.",
+      "dataLancamento": "09/11/2022",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/7/77/Tulilautta3.jpg"
+    },
+    {
+      "id": 2,
+      "nome": "HIHIH",
+      "descricao": "IHIHIH",
+      "dataLancamento": "HIHIHIH",
+      "imagem": "HIHI"
+    }
+  ]
+}
