@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento das Músicas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../src/musicas.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div id="pai">
+            <img src="../images/Spotify_icon.svg.png" id="icone">
+            <h3>Gerenciamento de Musicas</h3>
+        </div>
+        <div id="filho" onClick="adicionarModal()">
+            <h3>Adicionar</h3>
+        </div>
+    </header>
+    <main>
+        <div id="listaMusicas"></div>
+    </main>
+
+    <dialog id="dialogMusica">
+        <div id="quadrado-preto">
+
+        </div>
+    </dialog>
+
+<dialog id="dialogAdd">
+        <div id="quadrado-preto2">
+            <h4 onclick="sairModal()">Voltar</h4>
+            <h2>Adicionar uma Música:</h2>
+            <form id="formAdicionarMusica">
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" required>
+                <label for="nomeMusica">Nome:</label>
+                <input type="text" id="nomeMusica" name="nomeMusica" required>
+                <label for="imagemMusica">Imagem:</label>
+                <input type="text" id="imagemMusica" name="imagemMusica" required>
+                <label for="cantorMusica">Cantor:</label>
+                <input type="text" id="cantorMusica" name="cantorMusica" required>
+                <label for="albumMusica">Álbum:</label>
+                <input type="text" id="albumMusica" name="albumMusica" required>
+                <button type="button" onclick="adicionarMusica()" class="botao">Adicionar</button>
+            </form>
+        </div>
+</dialog>
+
+    <dialog id="dialogAlt">
+        <div id="quadrado-preto3">
+            <h4 onclick="sairModal3()">Voltar</h4>
+
+            <form id="formAdicionarMusica">
+                <label for="id">ID:</label>
+                <input type="text" id="idAlt" name="id" required>
+
+                <label for="nomeMusica">Nome:</label>
+                <input type="text" id="nomeMusicaAlt" name="nomeMusica" required>
+
+                <label for="imagemMusica">Imagem:</label>
+                <input type="text" id="imagemMusicaAlt" name="imagemMusica" required>
+
+                <label for="cantorMusica">Cantor:</label>
+                <input type="text" id="cantorMusicaAlt" name="cantorMusica" required>
+
+                <label for="albumMusica">Álbum:</label>
+                <input type="text" id="albumMusicaAlt" name="albumMusica" required>
+                
+                <button type="button" onclick="alterarMusica()" class="botao">Alterar</button>
+            </form>
+        </div>
+    </dialog>
+</body>
+
+</html>

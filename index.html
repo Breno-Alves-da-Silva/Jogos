@@ -4,55 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <title>Jogos</title>
-
+    <title>Gerenciamento das Jogos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
 
-    <button id="open-dialog">Cadastrar</button>
+    <header>
+        <div id="pai">
+            
+            <h3>Gerenciamento de Jogos</h3>
+        </div>
+        <div id="filho" onClick="adicionarModal()">
+            <h3>Adicionar</h3>
+        </div>
+    </header>
+    <main>
+        <div id="listaJogos"></div>
+    </main>
 
-    <dialog id="meu-dialogo">
-        <div class="modal-content">
-            <h2>Preencher Cadastro</h2>
+    <dialog id="dialogJogos">
+        <div id="quadrado-preto">
 
-            <form id="jogo-form" method="dialog">
-
-                <label for="id">ID:</label>
-                <input type="number" id="id" required>
-
-
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" required>
-
-
-                <label for="descricao">Descrição:</label>
-                <input type="text" id="descricao" required>
-
-
-                <label for="dataLancamento">Data de lançamento:</label>
-                <input type="text" id="dataLancamento" required>
-
-
-                <label for="imagem">Imagem:</label>
-                <input type="text" id="imagem" required>
-
-                <button id="fechar-dialogo">Cancelar</button>
-                <button type="submit" id="fechar-dialogo">Cadastrar Jogo</button>
-
-            </form>
         </div>
     </dialog>
 
-<dialog id="imagem-dialogo">
-    
+<dialog id="dialogAdd">
+        <div id="quadrado-preto2">
+            <h4 onclick="sairModal()">Voltar</h4>
+            <h2>Adicionar um Jogo:</h2>
+            <form id="formAdicionarJogos">
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" required>
+
+                <label for="nomeJogos">Nome:</label>
+                <input type="text" id="nomeJogos" name="nomeJogos" required>
+
+                <label for="imagemJogos">Imagem:</label>
+                <input type="text" id="imagemJogos" name="imagemJogos" required>
+
+                <label for="descricaoJogos">Descrição:</label>
+                <input type="text" id="descricaoJogos" name="descricaoJogos" required>
+
+                <label for="dataLancamentoJogos">Data de Lançamento:</label>
+                <input type="text" id="dataLancamentoJogos" name="dataLancamentoJogos" required>
+
+                <button type="button" onclick="adicionarJogos()" class="botao">Adicionar</button>
+            </form>
+        </div>
 </dialog>
-    <div class="container">
-        <h1>Jogos</h1>
-        <ul id="jogo-list"></ul>
+<dialog id="dialogAlt">
+    <div id="quadrado-preto3">
+        <h4 onclick="sairModal3()">Voltar</h4>
+
+        <form id="formAdicionarJogos"> <!-- Renomeado o ID do formulário -->
+            <label for="id">ID:</label>
+            <input type="text" id="idAlt" name="id" required>
+
+            <label for="nomeJogos">Nome:</label>
+            <input type="text" id="nomeJogosAlt" name="nomeJogos" required>
+
+            <label for="imagemJogos">Imagem:</label>
+            <input type="text" id="imagemJogosAlt" name="imagemJogos" required>
+
+            <label for="descricaoJogos">Descrição:</label>
+            <input type="text" id="descricaoJogosAlt" name="descricaoJogos" required>
+
+            <label for="dataLancamentoJogos">Data de Lançamento:</label>
+            <input type="text" id="dataLancamentoJogosAlt" name="dataLancamentoJogos" required>
+
+            <button type="button" onclick="AlterarJogo()" class="botao">Alterar</button> <!-- Alterado o evento de clique -->
+        </form>
     </div>
+</dialog>
 
 </body>
 
