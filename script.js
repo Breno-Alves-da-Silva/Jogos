@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+
 //-------------------------Função de adicionar música
 
 function adicionarJogos() {
@@ -94,7 +96,7 @@ function displayJogosList(data) {
             vish.innerHTML = 
             `
             <h4 onclick="sairModal2()">Voltar</h4>
-            <h2>Música:</h2>
+            <h2>Jogo:</h2>
             <div id="dentro">
                 <img src="${jogos.imagem}" id="iconeJogos"></a>
                 <br>

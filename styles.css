@@ -1,4 +1,10 @@
 /* Reset de estilos */
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: #ffeced; /* Fundo rosa claro */
+    color: #444; /* Texto mais escuro */
+    margin: 0;
+}
 * {
     margin: 0;
     padding: 0;
@@ -15,6 +21,7 @@ header {
     align-items: center;
 }
 
+/* Estilos dos elementos clicáveis */
 #pai, #filho {
     cursor: pointer;
 }
@@ -26,8 +33,9 @@ dialog {
     padding: 20px;
 }
 
+/* Estilos dos quadrados pretos */
 #quadrado-preto, #quadrado-preto2, #quadrado-preto3 {
-    background-color: #333;
+    background-color: #444;
     color: white;
     padding: 20px;
     border-radius: 10px;
@@ -47,53 +55,84 @@ input {
     padding: 8px;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #999999;
 }
 
 button {
     padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #999999;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #f8f9ff;
 }
 
 /* Estilos para o botão Voltar */
-h4 {
-    cursor: pointer;
-    margin-bottom: 10px;
+h1 {
+    font-size: 48px;
+    margin: 0;
+    color: #fff; /* Título em branco */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
     margin-bottom: 20px;
 }
 
-/* Estilos para a lista de jogos */
-#listaJogos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+/* Estilos para a lista de músicas */
+#listaMusicas {
+    display: flex; /* Alterado para flex */
+    flex-wrap: nowrap; /* Evita que os itens quebrem para a próxima linha */
+    overflow-x: auto; /* Adiciona uma barra de rolagem horizontal, se necessário */
 }
 
-/* Estilos para os jogos */
-.jogo {
+/* Estilos para as músicas */
+.musica {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
+    margin-right: 10px; /* Espaçamento entre as músicas */
     background-color: #f9f9f9;
 }
 
-.jogo img {
-    width: 100%;
+.musica .imagem-container {
     border-radius: 5px;
+    overflow: hidden; /* Garante que a imagem não ultrapasse os limites do contêiner */
 }
 
-.jogo h4 {
+.musica img {
+    width: 100px; /* Defina a largura desejada */
+    height: auto; /* Altura automática para manter a proporção */
+}
+
+.musica h4 {
     margin-top: 10px;
+}
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: #444; 
+    color: #444; /* Texto mais escuro */
+    margin: 0;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+
+/* Estilo para fundo colorido */
+.colorful-bg {
+    background: linear-gradient(135deg, #fdfdff, #ffffff);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
 }
 

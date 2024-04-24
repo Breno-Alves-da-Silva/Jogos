@@ -3,11 +3,14 @@ const server = express();
 const dadosJogos = require('./data/Jogos.json');
 const fs = require('fs');
 const cors = require('cors');
-
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json')  ;
 
 server.use(express.json());
-server.use(cors())
+server.use(cors());
 
+server.use(express.json());
+server.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 server.listen(3000, () => {
     console.log("O servidor está funcionando")

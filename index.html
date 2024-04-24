@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <div class="container">
+   
+        <div class="colorful-bg">
+       
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,16 +24,23 @@
         </div>
     </header>
     <main>
-        <div id="listaJogos"></div>
+        <div id="listaJogos">
+            <!-- Contêiner para cada jogo -->
+            <div class="jogo">
+                <img src="caminho_para_a_imagem1.jpg" alt="Jogo 1">
+            </div>
+            <div class="jogo">
+                <img src="caminho_para_a_imagem2.jpg" alt="Jogo 2">
+            </div>
+            <!-- Adicione mais jogos conforme necessário -->
+        </div>
     </main>
 
     <dialog id="dialogJogos">
-        <div id="quadrado-preto">
-
-        </div>
+        <div id="quadrado-preto"></div>
     </dialog>
 
-<dialog id="dialogAdd">
+    <dialog id="dialogAdd">
         <div id="quadrado-preto2">
             <h4 onclick="sairModal()">Voltar</h4>
             <h2>Adicionar um Jogo:</h2>
@@ -53,31 +63,32 @@
                 <button type="button" onclick="adicionarJogos()" class="botao">Adicionar</button>
             </form>
         </div>
-</dialog>
-<dialog id="dialogAlt">
-    <div id="quadrado-preto3">
-        <h4 onclick="sairModal3()">Voltar</h4>
+    </dialog>
 
-        <form id="formAdicionarJogos"> <!-- Renomeado o ID do formulário -->
-            <label for="id">ID:</label>
-            <input type="text" id="idAlt" name="id" required>
+    <dialog id="dialogAlt">
+        <div id="quadrado-preto3">
+            <h4 onclick="sairModal3()">Voltar</h4>
 
-            <label for="nomeJogos">Nome:</label>
-            <input type="text" id="nomeJogosAlt" name="nomeJogos" required>
+            <form id="formAdicionarJogos">
+                <label for="id">ID:</label>
+                <input type="text" id="idAlt" name="id" required>
 
-            <label for="imagemJogos">Imagem:</label>
-            <input type="text" id="imagemJogosAlt" name="imagemJogos" required>
+                <label for="nomeJogos">Nome:</label>
+                <input type="text" id="nomeJogosAlt" name="nomeJogos" required>
 
-            <label for="descricaoJogos">Descrição:</label>
-            <input type="text" id="descricaoJogosAlt" name="descricaoJogos" required>
+                <label for="imagemJogos">Imagem:</label>
+                <input type="text" id="imagemJogosAlt" name="imagemJogos" required>
 
-            <label for="dataLancamentoJogos">Data de Lançamento:</label>
-            <input type="text" id="dataLancamentoJogosAlt" name="dataLancamentoJogos" required>
+                <label for="descricaoJogos">Descrição:</label>
+                <input type="text" id="descricaoJogosAlt" name="descricaoJogos" required>
 
-            <button type="button" onclick="AlterarJogo()" class="botao">Alterar</button> <!-- Alterado o evento de clique -->
-        </form>
-    </div>
-</dialog>
+                <label for="dataLancamentoJogos">Data de Lançamento:</label>
+                <input type="text" id="dataLancamentoJogosAlt" name="dataLancamentoJogos" required>
+
+                <button type="button" onclick="AlterarJogo()" class="botao">Alterar</button>
+            </form>
+        </div>
+    </dialog>
 
 </body>
 
