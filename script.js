@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//-------------------------Função de adicionar música
+//-------------------------Função de adicionar jogo
 
 function adicionarJogos() {
     const id = document.getElementById('id').value;
@@ -129,7 +129,7 @@ function alterarJogos(id, nome, imagem, dataLancamento, descricao) {
     document.getElementById('idAlt').readOnly = true;
 }
 
-function AlterarJogo() {
+function alterarJogo() {
     const id = parseInt(document.getElementById('idAlt').value);
     const nome = document.getElementById('nomeJogosAlt').value;
     const imagem = document.getElementById('imagemJogosAlt').value;

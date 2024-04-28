@@ -24,11 +24,11 @@ server.post('/jogos', (req, res) => {
     if (!novoJogos.id || !novoJogos.nome || !novoJogos.imagem || !novoJogos.descricao || !novoJogos.dataLancamento) {
         return res.status(400).json({ mensagem: "Dados incompletos, tente novamente" });
     } else {
-        const jogosExistente = dadosJogos.Jogos.find(jogos => jogos.id === novoJogos.id);
+        const jogosExistente = dadosJogos.jogos.find(jogos => jogos.id === novoJogos.id);
         if (jogosExistente) {
             return res.status(400).json({ mensagem: "ID já existe, tente novamente com um ID diferente" });
         } else {
-            dadosJogos.Jogos.push(novoJogos);
+            dadosJogos.jogos.push(novoJogos);
             salvarDadosJogos(dadosJogos);
             return res.status(201).json({ mensagem: "Novo jogo cadastrada com sucesso!" });
         }
